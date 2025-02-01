@@ -134,10 +134,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CUDA_Helpers.cuh" />
+    <ClInclude Include="GPU_Atomics.cuh" />
     <ClInclude Include="GPU_VectorAdd.cuh" />
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="CUDA_Helpers.cu" />
+    <CudaCompile Include="GPU_Atomics.cu" />
     <CudaCompile Include="GPU_VectorAdd.cu" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

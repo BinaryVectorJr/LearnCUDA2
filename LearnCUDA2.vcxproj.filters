@@ -26,12 +26,18 @@
     <ClInclude Include="CUDA_Helpers.cuh">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="GPU_Atomics.cuh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="GPU_VectorAdd.cu">
       <Filter>Source Files</Filter>
     </CudaCompile>
     <CudaCompile Include="CUDA_Helpers.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="GPU_Atomics.cu">
       <Filter>Source Files</Filter>
     </CudaCompile>
   </ItemGroup>
