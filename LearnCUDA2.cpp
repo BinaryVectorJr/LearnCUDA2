@@ -7,7 +7,7 @@
 int main()
 {
     //call_VectorAdd();
-    call_Atomics();
+    call_AtomicsOnGPU();
 }
 
 
