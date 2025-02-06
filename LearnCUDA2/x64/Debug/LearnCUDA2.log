@@ -1,2 +1,7 @@
-﻿  LearnCUDA2.cpp
+﻿  Compiling CUDA source file src\GPU_Interop.cu...
+  
+  E:\Projects\Visual Studio\LearnCUDA2>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\bin\HostX64\x64" -x cu   -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.6\include"  -G   --keep-dir LearnCUDA2\x64\Debug  -maxrregcount=0   --machine 64 --compile -cudart static  -g  -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -Xcompiler "/FdLearnCUDA2\x64\Debug\vc143.pdb" -o "E:\Projects\Visual Studio\LearnCUDA2\LearnCUDA2\x64\Debug\GPU_Interop.cu.obj" "E:\Projects\Visual Studio\LearnCUDA2\src\GPU_Interop.cu" 
+  GPU_Interop.cu
+  tmpxft_00007be0_00000000-7_GPU_Interop.cudafe1.cpp
+E:\Projects\Visual Studio\LearnCUDA2\src\GPU_Interop.cu(64): warning C4996: 'cudaGLSetGLDevice': was declared deprecated
   LearnCUDA2.vcxproj -> E:\Projects\Visual Studio\LearnCUDA2\x64\Debug\LearnCUDA2.exe

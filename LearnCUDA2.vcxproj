@@ -71,6 +71,14 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)Dependencies\glew\include;$(ProjectDir)src;$(ProjectDir)Dependencies;$(ProjectDir)Dependencies\freeglut\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Dependencies\glew\lib;$(ProjectDir)Dependencies\freeglut\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(ProjectDir)Dependencies\glew\include;$(ProjectDir)src;$(ProjectDir)Dependencies;$(ProjectDir)Dependencies\freeglut\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Dependencies\glew\lib;$(ProjectDir)Dependencies\freeglut\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -109,7 +117,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;freeglutd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -126,21 +134,25 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;freeglutd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LearnCUDA2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CUDA_Helpers.cuh" />
-    <ClInclude Include="GPU_Atomics.cuh" />
-    <ClInclude Include="GPU_VectorAdd.cuh" />
+    <ClInclude Include="Dependencies\CUDA_Helpers.cuh" />
+    <ClInclude Include="Dependencies\GL_Helper.cuh" />
+    <ClInclude Include="src\GPU_Atomics.cuh" />
+    <ClInclude Include="src\GPU_Interop.cuh" />
+    <ClInclude Include="src\GPU_VectorAdd.cuh" />
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="CUDA_Helpers.cu" />
-    <CudaCompile Include="GPU_Atomics.cu" />
-    <CudaCompile Include="GPU_VectorAdd.cu" />
+    <CudaCompile Include="Dependencies\CUDA_Helpers.cu" />
+    <CudaCompile Include="Dependencies\GL_Helper.cu" />
+    <CudaCompile Include="src\GPU_Atomics.cu" />
+    <CudaCompile Include="src\GPU_Interop.cu" />
+    <CudaCompile Include="src\GPU_VectorAdd.cu" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

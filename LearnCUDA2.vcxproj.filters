@@ -20,25 +20,33 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GPU_VectorAdd.cuh">
+    <ClInclude Include="src\GPU_VectorAdd.cuh">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="CUDA_Helpers.cuh">
+    <ClInclude Include="Dependencies\CUDA_Helpers.cuh">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="GPU_Atomics.cuh">
+    <ClInclude Include="src\GPU_Atomics.cuh">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\GPU_Interop.cuh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\GL_Helper.cuh" />
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="GPU_VectorAdd.cu">
+    <CudaCompile Include="src\GPU_VectorAdd.cu">
       <Filter>Source Files</Filter>
     </CudaCompile>
-    <CudaCompile Include="CUDA_Helpers.cu">
+    <CudaCompile Include="Dependencies\CUDA_Helpers.cu">
       <Filter>Source Files</Filter>
     </CudaCompile>
-    <CudaCompile Include="GPU_Atomics.cu">
+    <CudaCompile Include="src\GPU_Atomics.cu">
       <Filter>Source Files</Filter>
     </CudaCompile>
+    <CudaCompile Include="src\GPU_Interop.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Dependencies\GL_Helper.cu" />
   </ItemGroup>
 </Project>

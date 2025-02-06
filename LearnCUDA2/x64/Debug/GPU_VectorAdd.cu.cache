@@ -1,4 +1,4 @@
-Identity=GPU_VectorAdd.cu
+Identity=src\GPU_VectorAdd.cu
 AdditionalCompilerOptions=
 AdditionalCompilerOptions=
 AdditionalDependencies=

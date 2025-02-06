@@ -2,12 +2,17 @@
 //
 
 //#include "./GPU_VectorAdd.cuh"
-#include "./GPU_Atomics.cuh"
+//#include "./GPU_Atomics.cuh"
+#include "./GPU_Interop.cuh"
 
 int main()
 {
     //call_VectorAdd();
-    call_AtomicsOnGPU();
+    //call_AtomicsOnGPU();
+
+    // Setting default values for GLUT
+    int _argc = 1;
+    char* _argv[1] = { (char*)"Default" };
+    call_Interop(_argc,_argv);
+
 }
-
-

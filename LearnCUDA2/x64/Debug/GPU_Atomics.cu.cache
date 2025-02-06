@@ -1,4 +1,4 @@
-Identity=GPU_Atomics.cu
+Identity=src\GPU_Atomics.cu
 AdditionalCompilerOptions=
 AdditionalCompilerOptions=
 AdditionalDependencies=
