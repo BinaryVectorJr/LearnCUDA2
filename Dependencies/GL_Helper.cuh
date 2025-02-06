@@ -19,7 +19,8 @@
 #include <freeglut.h>
 #include <cuda_gl_interop.h>
 
-struct CPUAnimBitmap {
+struct CPUAnimBitmap 
+{
     unsigned char* pixels;
     int     width, height;
     void* dataBlock;
@@ -28,7 +29,8 @@ struct CPUAnimBitmap {
     void (*clickDrag)(void*, int, int, int, int);
     int     dragStartX, dragStartY;
 
-    CPUAnimBitmap(int w, int h, void* d = NULL) {
+    CPUAnimBitmap(int w, int h, void* d = NULL) 
+    {
         width = w;
         height = h;
         pixels = new unsigned char[width * height * 4];
@@ -36,18 +38,21 @@ struct CPUAnimBitmap {
         clickDrag = NULL;
     }
 
-    ~CPUAnimBitmap() {
+    ~CPUAnimBitmap() 
+    {
         delete[] pixels;
     }
 
     unsigned char* get_ptr(void) const { return pixels; }
     long image_size(void) const { return width * height * 4; }
 
-    void click_drag(void (*f)(void*, int, int, int, int)) {
+    void click_drag(void (*f)(void*, int, int, int, int)) 
+    {
         clickDrag = f;
     }
 
-    void anim_and_exit(void (*f)(void*, int), void(*e)(void*)) {
+    void anim_and_exit(void (*f)(void*, int), void(*e)(void*)) 
+    {
         CPUAnimBitmap** bitmap = get_bitmap_ptr();
         *bitmap = this;
         fAnim = f;
@@ -70,7 +75,8 @@ struct CPUAnimBitmap {
     }
 
     // static method used for glut callbacks
-    static CPUAnimBitmap** get_bitmap_ptr(void) {
+    static CPUAnimBitmap** get_bitmap_ptr(void) 
+    {
         static CPUAnimBitmap* gBitmap;
         return &gBitmap;
     }
@@ -94,7 +100,8 @@ struct CPUAnimBitmap {
     }
 
     // static method used for glut callbacks
-    static void idle_func(void) {
+    static void idle_func(void) 
+    {
         static int ticks = 1;
         CPUAnimBitmap* bitmap = *(get_bitmap_ptr());
         bitmap->fAnim(bitmap->dataBlock, ticks++);
@@ -102,7 +109,8 @@ struct CPUAnimBitmap {
     }
 
     // static method used for glut callbacks
-    static void Key(unsigned char key, int x, int y) {
+    static void Key(unsigned char key, int x, int y) 
+    {
         switch (key) {
         case 27:
             CPUAnimBitmap * bitmap = *(get_bitmap_ptr());
@@ -122,20 +130,23 @@ struct CPUAnimBitmap {
     }
 };
 
-struct CPUBitmap {
+struct CPUBitmap 
+{
     unsigned char* pixels;
     int     x, y;
     void* dataBlock;
     void (*bitmapExit)(void*);
 
-    CPUBitmap(int width, int height, void* d = NULL) {
+    CPUBitmap(int width, int height, void* d = NULL)
+    {
         pixels = new unsigned char[width * height * 4];
         x = width;
         y = height;
         dataBlock = d;
     }
 
-    ~CPUBitmap() {
+    ~CPUBitmap() 
+    {
         delete[] pixels;
     }
 
@@ -161,13 +172,15 @@ struct CPUBitmap {
     }
 
     // static method used for glut callbacks
-    static CPUBitmap** get_bitmap_ptr(void) {
+    static CPUBitmap** get_bitmap_ptr(void) 
+    {
         static CPUBitmap* gBitmap;
         return &gBitmap;
     }
 
     // static method used for glut callbacks
-    static void Key(unsigned char key, int x, int y) {
+    static void Key(unsigned char key, int x, int y) 
+    {
         switch (key) {
         case 27:
             CPUBitmap * bitmap = *(get_bitmap_ptr());
@@ -178,7 +191,8 @@ struct CPUBitmap {
     }
 
     // static method used for glut callbacks
-    static void Draw(void) {
+    static void Draw(void) 
+    {
         CPUBitmap* bitmap = *(get_bitmap_ptr());
         glClearColor(0.0, 0.0, 0.0, 1.0);
         glClear(GL_COLOR_BUFFER_BIT);
@@ -186,3 +200,9 @@ struct CPUBitmap {
         glFlush();
     }
 };
+
+
+
+
+
+

@@ -11,8 +11,10 @@ int main()
     //call_AtomicsOnGPU();
 
     // Setting default values for GLUT
-    int _argc = 1;
-    char* _argv[1] = { (char*)"Default" };
-    call_Interop(_argc,_argv);
+    // int _argc = 1;
+    // char* _argv[1] = { (char*)"Default" };
+    // call_Interop(_argc,_argv);
+
+    Interop_Anim();
 
 }
